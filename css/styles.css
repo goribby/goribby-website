@@ -1,0 +1,236 @@
+* {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    text-shadow: 0px 1px 0px #00000056;
+}
+@supports (font-variation-settings: normal) {
+  * { font-family: InterVariable, sans-serif; }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+/* FUNDO */
+.main-bg {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: visible;
+    overflow-x: auto;
+    background-color: #1a1a1a;
+}
+
+.main-bg::before {
+    content: "";
+    position: fixed;  /* fica fixo na viewport */
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    
+    background-image: radial-gradient(rgba(45,45,45,1) 2px, transparent 0);
+    background-size: 30px 30px;
+
+    animation: bg-drift 2s linear infinite;
+    will-change: transform;
+    z-index: -1;
+    pointer-events: none; /* ignora interação do mouse */
+}
+
+/* ANIMACAO FUNDO */
+
+@keyframes bg-drift {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-30px, -30px);
+    }
+}
+
+/* NODE BASE */
+.node {
+    background-color: #303030;
+    color: #e6e6e6;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+}
+
+.node-content {
+    background-color: #545454;
+    color: #e6e6e6;
+    border: 2px solid rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.node-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.node-content-grid iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* mantém proporção correta */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.node-content-grid > * {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.node-inner {
+    border-radius: 8px;
+    overflow: hidden; /* corta só o painel */
+}
+
+/* TITULO */
+.node-title {
+    position: relative;
+    padding: 6px 12px;
+    padding-left: 28px;
+    font-size: 1rem;
+    background-color: #3a3a3a;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* SETA TÍTULO */
+
+.node-title::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url("../icons/downarrow_hlt.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* VARIAÇÕES DE TÍTULO */
+.node-title.shader {
+    background-color: #2b652b;
+}
+
+.node-title.image {
+    background-color: #79461d;
+}
+
+.node-title.input {
+    background-color: #82354c;
+}
+
+.node-title.math {
+    background-color: #246283;
+}
+
+/* CORPO */
+.node-body {
+    padding: 12px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* NODE PRINCIPAL */
+.node-main {
+    width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+/* GRID INTERNO (sub-nodes) */
+.node-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    background-color: #2a2a2a;
+}
+
+/* IMAGEM */
+.node-image {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+
+
+/* SOCKETS */
+.socket {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #ccc;
+    margin: 6px 0;
+    padding: 0 12px;
+}
+
+.socket.input {
+    flex-direction: row;
+}
+
+.socket.output {
+    flex-direction: row-reverse;
+}
+
+.socket::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #666;
+    box-shadow: 0 0 0 2px #222;
+}
+
+.socket.input::before {
+    left: -18px;
+}
+
+.socket.output::before {
+    right: -18px;
+}
+
+.socket.color::before { background: #c7c729; }
+.socket.vector::before { background: #6363c7; }
+.socket.float::before  { background: #a1a1a1; }
+
+/* FIM SOCKETS*/ 
+
+
+
+/* BOARD */
+.board {
+    position: relative;
+}
+
+/* SVG DAS CONEXÕES */
+.connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}

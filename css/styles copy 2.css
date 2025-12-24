@@ -1,0 +1,112 @@
+* {
+    text-shadow: 0px 1px 0px #00000056;
+}
+
+/* FUNDO */
+.main-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    background-image: radial-gradient(rgba(45, 45, 45, 1) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px
+}
+
+/* NODE BASE */
+.node {
+    background-color: #303030;
+    color: #e6e6e6;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    /*overflow: hidden;*/
+    position: relative;
+}
+
+/* TITULO */
+.node-title {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background-color: #3a3a3a;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+/* VARIAÇÕES DE TÍTULO */
+.node-title.main {
+    background-color: #444;
+}
+
+.node-title.image {
+    background-color: #2b652b;
+}
+
+.node-title.info {
+    background-color: #3b4f7a;
+}
+
+/* CORPO */
+.node-body {
+    padding: 12px;
+}
+
+/* NODE PRINCIPAL */
+.node-main {
+    width: 900px;
+    margin: 40px auto;
+}
+
+/* GRID INTERNO (sub-nodes) */
+.node-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    background-color: #2a2a2a;
+}
+
+/* IMAGEM */
+.node-image {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+.socket {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #ccc;
+    margin: 6px 0;
+    padding: 0 12px;
+}
+
+.socket.input {
+    flex-direction: row;
+}
+
+.socket.output {
+    flex-direction: row-reverse;
+}
+
+.socket::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #666;
+    box-shadow: 0 0 0 2px #222;
+}
+
+.socket.input::before {
+    left: -18px;
+}
+
+.socket.output::before {
+    right: -18px;
+}
+
+.socket.color::before { background: #f7c948; }
+.socket.vector::before { background: #4fb3ff; }
+.socket.float::before  { background: #ccc; }

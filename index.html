@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Goribby's Website</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="js/nodes.js" defer></script>
+
+</head>
+
+<body class="main-bg">
+
+    <div class="node node-main board"><!-- board -->
+
+        <!-- SVG DAS CONEXÕES -->
+        <svg class="connections"></svg>
+
+        <div class="node-title shader">
+            Node Title
+        </div>
+
+        <div class="node-body node-grid">
+
+            <div class="node">
+
+                <div class="node-title image">Avatar</div>
+
+                <div class="node-body">
+
+                    <!-- SOCKET OUTPUT -->
+                    <div class="socket output color" id="out-1" data-connect="in-2">
+                        Color
+                    </div>
+                    <!-- SOCKET OUTPUT -->
+                    <div class="socket output float">
+                        Alpha
+                    </div>
+                    <div class="node-content">
+                        <img src="img/goribby_idle.gif" class="node-image">
+                    </div>
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector" id="in-1">
+                        Vector
+                    </div>
+                </div>
+            </div>
+
+            <div class="node">
+
+                <div class="node-title math">About Me</div>
+
+                <div class="node-body">
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector" id="in-2">
+                        Vector
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero vel fuga iure dolore et aliquam,
+                        explicabo similique delectus asperiores distinctio harum officiis odit iusto beatae aspernatur
+                        quod consectetur natus laudantium!</p>
+
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output color" id="out-2" data-connect="in-3">
+                        Color
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="node-body node-grid">
+
+            <div class="node">
+                <div class="node-panel">
+
+                    <div class="node-title input">Image Texture</div>
+
+                    <div class="node-body">
+                        <!-- SOCKET INPUT-->
+                        <div class="socket input vector" id="in-3">
+                            Vector
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus esse vero expedita vitae
+                            ullam deserunt quam obcaecati rerum, minus voluptatem neque non magni a voluptates, harum
+                            dolore impedit nemo maiores.</p>
+                        <!-- SOCKET OUTPUT-->
+                        <div class="socket output color" id="out-3">
+                            Color
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="node-body node-grid">
+
+            <div class="node">
+
+                <div class="node-title input">My Grid</div>
+
+                <div class="node-body">
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output color" id="out-3">
+                        Color
+                    </div>
+                    <div class="node-content-grid node-content">
+                        <iframe width="960" height="540" src="https://www.youtube.com/embed/b7acPi-Y58A?si=X5lUaR931Imc8WXm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540" src="https://www.youtube.com/embed/gTEAdShoys0?si=eBOSF6hzpuH-aGOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540" src="https://www.youtube.com/embed/ETN6UtoH6dQ?si=0a0Vvx7uWw6ALt6-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540" src="https://www.youtube.com/embed/Rwz6J_4sorQ?si=wf7e_h1WHzYHQZc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector" id="in-3">
+                        Vector
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
