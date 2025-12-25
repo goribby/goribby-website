@@ -49,7 +49,9 @@
                         Alpha
                     </div>
                     <div class="node-content">
-                        <img src="img/goribby_idle.gif" class="node-image">
+                        <video autoplay loop playsinline disablepictureinpicture disableremoteplayback style="width: 100%; height: auto;">
+                            <source src="img/animated_avatar.webm" type="video/webm" />
+                        </video>                        
                     </div>
                     <!-- SOCKET INPUT-->
                     <div class="socket input vector" id="in-1">
@@ -61,7 +63,7 @@
             <!-- ABOUT ME -->
             <div class="node">
 
-                <div class="node-title math">About Me</div>
+                <div class="node-title input">About Me</div>
 
                 <div class="node-body">
                     <div class="node-content about-me">
@@ -88,14 +90,14 @@
             <!-- ULTIMOS VIDEOS -->
             <div class="node">
 
-                <div class="node-title input">My Latest Work</div>
+                <div class="node-title math">Recent Animations</div>
 
                 <div class="node-body">
                     <!-- SOCKET OUTPUT-->
                     <div class="socket output color" id="out-3">
                         Color
                     </div>
-                    <div class="node-content" id="vid-portfolio">
+                    <div class="node-content" id="vid-showreel">
                         <iframe width="960" height="540"
                             src="https://www.youtube.com/embed/b7acPi-Y58A?si=X5lUaR931Imc8WXm"
                             title="YouTube video player" frameborder="0"
@@ -116,13 +118,13 @@
                     </div>
 
                    <!-- BOTAO VER MAIS -->
-                    <button class="node-button">
+                    <a href="https://www.goribby.com/portfolio.html" class="node-button">
 
                         View more
                         <span class="icon">
                             <img src="icons/downarrow_hlt.svg" alt="icon">
                         </span>
-                    </button>
+                    </a>
 
                     <!-- SOCKET INPUT-->
                     <div class="socket input vector" id="in-3">

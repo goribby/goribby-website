@@ -71,7 +71,7 @@ html, body {
     overflow: hidden;
 }
 
-#vid-portfolio {
+#vid-showreel {
     display: flex;
 }
 
@@ -274,6 +274,7 @@ html, body {
     user-select: none;
     white-space: nowrap;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .node-button:hover {
