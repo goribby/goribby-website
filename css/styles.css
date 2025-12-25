@@ -1,10 +1,26 @@
 * {
     font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1;
-    text-shadow: 0px 1px 0px #00000056;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    text-shadow: 0px 2px 0px #00000056;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 0;
 }
+
 @supports (font-variation-settings: normal) {
   * { font-family: InterVariable, sans-serif; }
+}
+
+::selection {
+    background-color: #67c2ff;
+    color: #000000;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background-color: #67c2ff;
+    color: #000000;
+    text-shadow: none;
 }
 
 html, body {
@@ -55,7 +71,6 @@ html, body {
 /* NODE BASE */
 .node {
     background-color: #303030;
-    color: #e6e6e6;
     border: 2px solid rgba(255,255,255,0.1);
     border-radius: 8px;
     overflow: visible;
@@ -65,7 +80,6 @@ html, body {
 
 .node-content {
     background-color: #545454;
-    color: #e6e6e6;
     border: 2px solid rgba(0,0,0,0.3);
     border-radius: 8px;
     overflow: hidden;
@@ -197,7 +211,6 @@ html, body {
     display: flex;
     align-items: center;
     font-size: 0.75rem;
-    color: #ccc;
     margin: 6px 0;
     padding: 0 12px;
 }
@@ -218,7 +231,7 @@ html, body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #666;
+    background-color: #666;
     box-shadow: 0 0 0 2px #222;
 }
 
@@ -230,9 +243,9 @@ html, body {
     right: -18px;
 }
 
-.socket.color::before { background: #c7c729; }
-.socket.vector::before { background: #6363c7; }
-.socket.float::before  { background: #a1a1a1; }
+.socket.color::before { background-color: #c7c729; }
+.socket.vector::before { background-color: #6363c7; }
+.socket.float::before  { background-color: #a1a1a1; }
 
 /* FIM SOCKETS*/ 
 
@@ -257,6 +270,7 @@ html, body {
 /* BOTOES */
 
 .node-button {
+    color: #e6e6e6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,13 +278,12 @@ html, body {
     width: 100%;
     padding: 8px 12px;
     background-color: #4a4a4a;
-    color: #e6e6e6;
     font-size: 0.9rem;
     font-weight: 500;
-    border: none;
-    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.1s ease;
     user-select: none;
     white-space: nowrap;
     box-sizing: border-box;
@@ -279,6 +292,10 @@ html, body {
 
 .node-button:hover {
     background-color: #5c5c5c;
+}
+
+.node-button:active {
+    background-color: #4772b3;
 }
 
 .node-button .icon {
@@ -306,4 +323,40 @@ html, body {
 
 .about-me p {
     font-size: 25px;
+}
+
+/* MENU TITULO */
+
+.node-main-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* menu no título */
+.node-menu {
+    display: flex;
+    gap: 8px;
+}
+
+/* ajustes para botão caber no título */
+.node-menu .node-button {
+    width: auto;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+}
+
+/* PAGINA ATUAL */
+
+.node-menu .current-page {
+    background-color: #31507e;
+}
+
+.node-menu .current-page:hover {
+    background-color: #18273d;
+}
+
+.node-menu .current-page:active {
+    background-color: #4772b3;
 }

@@ -28,8 +28,21 @@
         <!-- SVG DAS CONEXÕES -->
         <svg class="connections"></svg>
 
-        <div class="node-title shader">
-            Home Page
+        <div class="node-title shader node-main-title">
+            <span class="title-text">Goribby's Website - Home Page</span>
+
+            <nav class="node-menu">
+                <a href='index.html' class="node-button current-page"><span class="icon"><img
+                            src="icons/downarrow_hlt.svg" alt="icon"></span>Home</a>
+                <a href="portfolio.html" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Animations</a>
+                <a href="rigs.html" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Rigs</a>
+                <a href="index.html#socials" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Socials</a>
+                <a href="index.html#contact" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Contact</a>
+            </nav>
         </div>
 
         <div class="node-body node-grid">
@@ -49,9 +62,10 @@
                         Alpha
                     </div>
                     <div class="node-content">
-                        <video autoplay loop playsinline disablepictureinpicture disableremoteplayback style="width: 100%; height: auto;">
+                        <video autoplay loop playsinline disablepictureinpicture disableremoteplayback
+                            style="width: 100%; height: auto;">
                             <source src="img/animated_avatar.webm" type="video/webm" />
-                        </video>                        
+                        </video>
                     </div>
                     <!-- SOCKET INPUT-->
                     <div class="socket input vector" id="in-1">
@@ -65,14 +79,22 @@
 
                 <div class="node-title input">About Me</div>
 
+                <!-- SOCKET OUTPUT -->
+
+
                 <div class="node-body">
+                    <div class="socket output math">
+                        Value
+                    </div>
+
                     <div class="node-content about-me">
-                    <h1><b><i>Hey there!</i></b></h1>
-                    <p>My name is Davi Bernardo, I'm a<br><b>Brazilian 3D animator.</b></p>
-                    <p>I've been animating using <b>Blender</b> since 2021.</p>
-                    <p>I specialize in<br>viewmodel animation.</p>
-                    <p>You can find my latest work below.</p>
-                    <span style="height: 50px; display: inline-block;"></span>
+                        <br>
+                        <h1><b><i>Hey there!</i></b></h1>
+                        <br>
+                        <p>My name is Davi Bernardo, I'm a<br><b>Brazilian 3D animator.</b></p>
+                        <p>I've been animating using <b>Blender</b> since 2021, specializing in viewmodel animation.</p>
+                        <p>You can find my latest work below.</p>
+                        <br>
                     </div>
                     <!-- SOCKET INPUT-->
                     <div class="socket input float" id="in-2">
@@ -94,8 +116,8 @@
 
                 <div class="node-body">
                     <!-- SOCKET OUTPUT-->
-                    <div class="socket output color" id="out-3">
-                        Color
+                    <div class="socket output vector" id="out-3">
+                        Vector
                     </div>
                     <div class="node-content" id="vid-showreel">
                         <iframe width="960" height="540"
@@ -117,8 +139,8 @@
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
-                   <!-- BOTAO VER MAIS -->
-                    <a href="https://www.goribby.com/portfolio.html" class="node-button">
+                    <!-- BOTAO VER MAIS -->
+                    <a href="portfolio.html" class="node-button">
 
                         View more
                         <span class="icon">
@@ -127,8 +149,8 @@
                     </a>
 
                     <!-- SOCKET INPUT-->
-                    <div class="socket input vector" id="in-3">
-                        Vector
+                    <div class="socket input math" id="in-3">
+                        Factor
                     </div>
                 </div>
             </div>
