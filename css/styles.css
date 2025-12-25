@@ -68,6 +68,18 @@ html, body {
     color: #e6e6e6;
     border: 2px solid rgba(0,0,0,0.3);
     border-radius: 8px;
+    overflow: hidden;
+}
+
+#vid-portfolio {
+    display: flex;
+}
+
+.node-content iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* mantém proporção correta */
+    overflow: hidden;
 }
 
 .node-content-grid {
