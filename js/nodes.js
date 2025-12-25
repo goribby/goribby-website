@@ -23,7 +23,7 @@ function drawConnections() {
     const boardBox = board.getBoundingClientRect();
 
     const defs = document.createElementNS(
-        "http://www.w3.org/2000/svg",
+        "https://www.w3.org/2000/svg",
         "defs"
     );
     svg.appendChild(defs);
@@ -47,7 +47,7 @@ function drawConnections() {
         const gradId = `grad-${gradIndex++}`;
 
         const gradient = document.createElementNS(
-            "http://www.w3.org/2000/svg",
+            "https://www.w3.org/2000/svg",
             "linearGradient"
         );
 
@@ -59,14 +59,14 @@ function drawConnections() {
         gradient.setAttribute("y2", p2.y);
 
         const stop1 = document.createElementNS(
-            "http://www.w3.org/2000/svg",
+            "https://www.w3.org/2000/svg",
             "stop"
         );
         stop1.setAttribute("offset", "0%");
         stop1.setAttribute("stop-color", colorFrom);
 
         const stop2 = document.createElementNS(
-            "http://www.w3.org/2000/svg",
+            "https://www.w3.org/2000/svg",
             "stop"
         );
         stop2.setAttribute("offset", "100%");
@@ -78,7 +78,7 @@ function drawConnections() {
 
         // path
         const path = document.createElementNS(
-            "http://www.w3.org/2000/svg",
+            "https://www.w3.org/2000/svg",
             "path"
         );
 

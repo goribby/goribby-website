@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" lang="en">
     <title>Goribby's Website</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -20,7 +21,7 @@
         <svg class="connections"></svg>
 
         <div class="node-title shader">
-            Node Title
+            Home Page
         </div>
 
         <div class="node-body node-grid">
@@ -49,34 +50,37 @@
                 </div>
             </div>
 
+            <!-- ABOUT ME -->
             <div class="node">
 
                 <div class="node-title math">About Me</div>
 
-                <div class="node-body">
+                <div class="node-body about-me">
+
+                    <h1><b><i>Hey there!</i></b></h1>
+                    <p>My name is Davi Bernardo, I'm a<br><b>Brazilian 3D animator.</b></p>
+                    <p>I've been animating using <b>Blender</b> since 2021.</p>
+                    <p>I specialize in<br>viewmodel animation.</p>
+                    <p>You can find my latest work below.</p>
+                    <span style="height: 50px; display: inline-block;"></span>
+
                     <!-- SOCKET INPUT-->
-                    <div class="socket input vector" id="in-2">
-                        Vector
-                    </div>
-
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero vel fuga iure dolore et aliquam,
-                        explicabo similique delectus asperiores distinctio harum officiis odit iusto beatae aspernatur
-                        quod consectetur natus laudantium!</p>
-
-                    <!-- SOCKET OUTPUT-->
-                    <div class="socket output color" id="out-2">
-                        Color
+                    <div class="socket input float" id="in-2">
+                        Info
                     </div>
                 </div>
+
             </div>
 
         </div>
 
+        <!-- NOVA LINHA -->
         <div class="node-body node-grid">
 
+            <!-- ULTIMOS VIDEOS -->
             <div class="node">
 
-                <div class="node-title input">Animation Portfolio</div>
+                <div class="node-title input">My Latest Work</div>
 
                 <div class="node-body">
                     <!-- SOCKET OUTPUT-->
@@ -84,11 +88,36 @@
                         Color
                     </div>
                     <div class="node-content-grid node-content">
-                        <iframe width="960" height="540" src="https://www.youtube.com/embed/b7acPi-Y58A?si=X5lUaR931Imc8WXm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe width="960" height="540" src="https://www.youtube.com/embed/gTEAdShoys0?si=eBOSF6hzpuH-aGOZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe width="960" height="540" src="https://www.youtube.com/embed/ETN6UtoH6dQ?si=0a0Vvx7uWw6ALt6-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <iframe width="960" height="540" src="https://www.youtube.com/embed/Rwz6J_4sorQ?si=wf7e_h1WHzYHQZc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/b7acPi-Y58A?si=X5lUaR931Imc8WXm"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/gTEAdShoys0?si=eBOSF6hzpuH-aGOZ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/ETN6UtoH6dQ?si=0a0Vvx7uWw6ALt6-"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/Rwz6J_4sorQ?si=wf7e_h1WHzYHQZc6"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
+
+                   <!-- BOTAO VER MAIS -->
+                    <button class="node-button">
+
+                        View more
+                        <span class="icon">
+                            <img src="icons/downarrow_hlt.svg" alt="icon">
+                        </span>
+                    </button>
 
                     <!-- SOCKET INPUT-->
                     <div class="socket input vector" id="in-3">
