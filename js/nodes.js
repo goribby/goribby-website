@@ -1,104 +1,158 @@
-function getSocketPoint(socket, boardBox) {
-    const r = socket.getBoundingClientRect();
-    const isOutput = socket.classList.contains('output');
+// ==========================
+// CONSTANTES E CACHE GLOBAL
+// ==========================
 
-    const SOCKET_RADIUS = 5;   // 10px / 2
-    const SOCKET_OFFSET = 8;  // alterado no olho mesmo
+const SVG_NS = "http://www.w3.org/2000/svg";
 
-    const x = isOutput
-        ? r.right - boardBox.left + SOCKET_OFFSET + SOCKET_RADIUS
-        : r.left  - boardBox.left - SOCKET_OFFSET - SOCKET_RADIUS;
+const SOCKET_RADIUS = 5;
+const SOCKET_OFFSET = 8;
 
-    const y = r.top + r.height / 2 - boardBox.top;
+const svg   = document.querySelector('.connections');
+const board = document.querySelector('.board');
 
-    return { x, y };
+const colorCache    = new WeakMap(); // socket -> color
+const gradientCache = new Map();     // "colorA|colorB" -> gradientId
+
+let resizeScheduled = false;
+
+
+// ==========================
+// UTILIDADES
+// ==========================
+
+function getSocketColor(socket) {
+    if (colorCache.has(socket)) {
+        return colorCache.get(socket);
+    }
+
+    const color = getComputedStyle(socket, '::before').backgroundColor;
+    colorCache.set(socket, color);
+    return color;
 }
 
+function getSocketPoint(socket, boardBox) {
+    const rect = socket.getBoundingClientRect();
+    const isOutput = socket.classList.contains('output');
+
+    return {
+        x: isOutput
+            ? rect.right - boardBox.left + SOCKET_OFFSET + SOCKET_RADIUS
+            : rect.left  - boardBox.left - SOCKET_OFFSET - SOCKET_RADIUS,
+        y: rect.top + rect.height * 0.5 - boardBox.top
+    };
+}
+
+function getOrCreateGradient(defs, p1, p2, colorFrom, colorTo) {
+    const key = `${colorFrom}|${colorTo}`;
+
+    if (gradientCache.has(key)) {
+        return gradientCache.get(key);
+    }
+
+    const id = `grad-${gradientCache.size}`;
+
+    const gradient = document.createElementNS(SVG_NS, 'linearGradient');
+    gradient.setAttribute('id', id);
+    gradient.setAttribute('gradientUnits', 'userSpaceOnUse');
+    gradient.setAttribute('x1', p1.x);
+    gradient.setAttribute('y1', p1.y);
+    gradient.setAttribute('x2', p2.x);
+    gradient.setAttribute('y2', p2.y);
+
+    const stopStart = document.createElementNS(SVG_NS, 'stop');
+    stopStart.setAttribute('offset', '0%');
+    stopStart.setAttribute('stop-color', colorFrom);
+
+    const stopEnd = document.createElementNS(SVG_NS, 'stop');
+    stopEnd.setAttribute('offset', '100%');
+    stopEnd.setAttribute('stop-color', colorTo);
+
+    gradient.append(stopStart, stopEnd);
+    defs.appendChild(gradient);
+
+    gradientCache.set(key, id);
+    return id;
+}
+
+
+// ==========================
+// DESENHO PRINCIPAL
+// ==========================
+
 function drawConnections() {
-    const svg = document.querySelector('.connections');
-    const board = document.querySelector('.board');
     if (!svg || !board) return;
 
-    svg.innerHTML = '';
+    // limpa tudo sem innerHTML
+    svg.replaceChildren();
+    gradientCache.clear();
+
     const boardBox = board.getBoundingClientRect();
 
-    const defs = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "defs"
-    );
+    const defs = document.createElementNS(SVG_NS, 'defs');
     svg.appendChild(defs);
 
-    let gradIndex = 0;
+    const fragment = document.createDocumentFragment();
 
-    document.querySelectorAll('.socket[data-connect]').forEach(from => {
+    const sockets = document.querySelectorAll('.socket[data-connect]');
+
+    for (const from of sockets) {
         const to = document.getElementById(from.dataset.connect);
-        if (!to) return;
+        if (!to) continue;
 
         const p1 = getSocketPoint(from, boardBox);
         const p2 = getSocketPoint(to, boardBox);
 
         const dx = Math.max(Math.abs(p2.x - p1.x) * 0.6, 40);
 
-        // cores dos sockets
-        const colorFrom = getComputedStyle(from, '::before').backgroundColor;
-        const colorTo   = getComputedStyle(to,   '::before').backgroundColor;
+        const colorFrom = getSocketColor(from);
+        const colorTo   = getSocketColor(to);
 
-        // gradient único
-        const gradId = `grad-${gradIndex++}`;
-
-        const gradient = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "linearGradient"
+        const gradientId = getOrCreateGradient(
+            defs,
+            p1, p2,
+            colorFrom, colorTo
         );
 
-        gradient.setAttribute("id", gradId);
-        gradient.setAttribute("gradientUnits", "userSpaceOnUse");
-        gradient.setAttribute("x1", p1.x);
-        gradient.setAttribute("y1", p1.y);
-        gradient.setAttribute("x2", p2.x);
-        gradient.setAttribute("y2", p2.y);
-
-        const stop1 = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "stop"
-        );
-        stop1.setAttribute("offset", "0%");
-        stop1.setAttribute("stop-color", colorFrom);
-
-        const stop2 = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "stop"
-        );
-        stop2.setAttribute("offset", "100%");
-        stop2.setAttribute("stop-color", colorTo);
-
-        gradient.appendChild(stop1);
-        gradient.appendChild(stop2);
-        defs.appendChild(gradient);
-
-        // path
-        const path = document.createElementNS(
-            "http://www.w3.org/2000/svg",
-            "path"
-        );
-
+        const path = document.createElementNS(SVG_NS, 'path');
         path.setAttribute(
-            "d",
+            'd',
             `M ${p1.x} ${p1.y}
              C ${p1.x + dx} ${p1.y},
                ${p2.x - dx} ${p2.y},
                ${p2.x} ${p2.y}`
         );
 
-        path.setAttribute("stroke", `url(#${gradId})`);
-        path.setAttribute("stroke-width", "3");
-        path.setAttribute("fill", "none");
-        path.setAttribute("stroke-linecap", "round");
+        path.setAttribute('stroke', `url(#${gradientId})`);
+        path.setAttribute('stroke-width', '3');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke-linecap', 'round');
 
-        svg.appendChild(path);
+        fragment.appendChild(path);
+    }
+
+    svg.appendChild(fragment);
+}
+
+
+// ==========================
+// RESIZE / RAF THROTTLE
+// ==========================
+
+function scheduleDraw() {
+    if (resizeScheduled) return;
+
+    resizeScheduled = true;
+
+    requestAnimationFrame(() => {
+        resizeScheduled = false;
+        drawConnections();
     });
 }
 
 
+// ==========================
+// EVENTOS
+// ==========================
+
 window.addEventListener('load', drawConnections);
-window.addEventListener('resize', drawConnections);
+window.addEventListener('resize', scheduleDraw);
