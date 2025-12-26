@@ -186,7 +186,7 @@ html, body {
 .node-title.blender {
     background-color: #e87d0d;
     color: #1d1d1d;
-    text-shadow: 0px 2px 0px #46464656;
+    text-shadow: none;
 }
 
 /* CORPO */
