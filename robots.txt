@@ -1,5 +1,8 @@
 # This file tells search engines and bots what they are allowed to see on your site.
 
+# Sitemap location.
+Sitemap: https://www.goribby.com/sitemap.xml
+
 # This is the default rule, which allows search engines to crawl your site (recommended).
 User-agent: *
 Allow: /
