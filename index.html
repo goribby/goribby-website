@@ -17,13 +17,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
     <script src="js/nodes.js" defer></script>
+    <script src="js/copy_to_clipboard" defer></script>
 
 </head>
 
 <body class="main-bg">
 
-    <div class="node node-main board"><!-- board -->
+    <div class="node node-main board">
 
         <!-- SVG DAS CONEXÕES -->
         <svg class="connections"></svg>
@@ -63,7 +65,7 @@
                     </div>
                     <div class="node-content">
                         <video autoplay loop playsinline disablepictureinpicture disableremoteplayback
-                            style="width: 100%; height: auto;">
+                            style="width: 100%; height: auto; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));">
                             <source src="img/animated_avatar.webm" type="video/webm" />
                         </video>
                     </div>
@@ -112,12 +114,12 @@
             <!-- ULTIMOS VIDEOS -->
             <div class="node">
 
-                <div class="node-title math">Recent Animations</div>
+                <div class="node-title color">Recent Animations</div>
 
                 <div class="node-body">
                     <!-- SOCKET OUTPUT-->
-                    <div class="socket output vector" id="out-3">
-                        Vector
+                    <div class="socket output color" id="out-3">
+                        Color
                     </div>
                     <div class="node-content" id="vid-showreel">
                         <iframe width="960" height="540"
@@ -139,6 +141,7 @@
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
 
+                    <div style="height: 2em;"></div>
                     <!-- BOTAO VER MAIS -->
                     <a href="portfolio.html" class="node-button">
 
@@ -157,7 +160,168 @@
 
         </div>
 
+        <!-- NOVA LINHA -->
 
+        <div class="node-body node-grid">
+
+            <div class="node node-parent" id="socials">
+
+                <div class="node-title displacement">Socials</div>
+
+                <div class="node-body">
+
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output vector">
+                        Displacement
+                    </div>
+
+                    <div class="node-children">
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #006afe;">Bluesky</div>
+                            <div class="node-body">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output bsky" id="out-bsky" data-connect="in-yt"></div>
+                                <div class="node-content" style="padding: 35px;">
+                                    <img src="img/Bluesky_Logo.svg">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <a href="https://bsky.app/profile/goribby.com" class="node-button">
+                                    Follow
+                                    <span class="icon">
+                                        <img src="icons/external-link.svg" alt="icon">
+                                    </span>
+                                </a>
+
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input bsky"></div>
+                            </div>
+                        </div>
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #ff0033;">YouTube</div>
+                            <div class="node-body">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output yt" id="out-yt" data-connect="in-artst"></div>
+                                <div class="node-content" style="padding: 10px;">
+                                    <img src="img/yt_icon_red_digital.png">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <a href="https://www.youtube.com/@goribby" class="node-button">
+                                    Subscribe
+                                    <span class="icon">
+                                        <img src="icons/external-link.svg" alt="icon">
+                                    </span>
+                                </a>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input yt" id="in-yt"></div>
+                            </div>
+                        </div>
+
+                        <div class="node node-child">
+                            <div class="node-title"
+                                style="background-color: #13aff0; color: #080808; text-shadow: 0px 2px 0px #41414156;">
+                                ArtStation</div>
+                            <div class="node-body">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output artst"></div>
+                                <div class="node-content" style="padding: 10px;">
+                                    <img src="img/ArtStation-logomark-white.svg">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <a href="https://www.artstation.com/goribby" class="node-button">
+                                    View Profile
+                                    <span class="icon">
+                                        <img src="icons/external-link.svg" alt="icon">
+                                    </span>
+                                </a>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input artst" id="in-artst"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector">
+                        Normal
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- NOVA LINHA -->
+
+        <div class="node-body node-grid">
+
+            <div class="node node-parent" id="contact">
+
+                <div class="node-title math">Contact</div>
+
+                <div class="node-body">
+
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output vector">
+                        Value
+                    </div>
+
+                    <div class="node-children">
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #5865f2;">Discord</div>
+                            <div class="node-body" style="text-align: center;">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output discord" id="out-discord" data-connect="in-email"></div>
+                                <p>@goribby</p>
+                                <div class="node-content" style="padding: 40px;">
+                                    <img src="img/Discord-Symbol-Blurple.svg">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <button class="node-button" onclick="copyDiscord(this)">
+                                    Copy Username
+                                    <span class="icon">
+                                        <img src="icons/copy.svg" alt="icon">
+                                    </span>
+                                </button>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input discord"></div>
+                            </div>
+                        </div>
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #ea4335;">Email</div>
+                            <div class="node-body" style="text-align: center; font-size: smaller;">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output email"></div>
+                                <p>contact.goribby@gmail.com</p>
+                                <div class="node-content" style="padding: 30px;">
+                                    <img src="img/Gmail_Icon.original.png">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <a href="mailto:contact.goribby@gmail.com" class="node-button">
+                                    Email
+                                    <span class="icon">
+                                        <img src="icons/external-link.svg" alt="icon">
+                                    </span>
+                                </a>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input email" id="in-email"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector">
+                        Factor
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
