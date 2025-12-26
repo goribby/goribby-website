@@ -75,7 +75,7 @@ html, body {
     border-radius: 8px;
     overflow: visible;
     position: relative;
-    z-index: 1;
+    z-index: 5;
 }
 
 .node-content {
@@ -241,7 +241,6 @@ html, body {
     border-radius: 50%;
     background-color: #666;
     box-shadow: 0 0 0 2px #222;
-    z-index: 3;
 }
 
 .socket.input::before {
@@ -277,7 +276,7 @@ html, body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
 
