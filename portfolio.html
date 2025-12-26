@@ -1,8 +1,229 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <p>Under construction!</p>
-        <a href="index.html">Go back</a>
-    </body>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" lang="en">
+    <title>Goribby's Website - Animations</title>
+
+    <!-- Open Graph -->
+    <meta content="Goribby's Website - Animations" property="og:title" />
+    <meta content="The official website for Goribby, a Brazilian 3D animator" property="og:description" />
+    <meta content="https://www.goribby.com/" property="og:url" />
+    <meta content="https://www.goribby.com/img/embed.png" property="og:image" />
+    <meta content="#3662BC" data-react-helmet="true" name="theme-color" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="https://www.goribby.com/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <script src="js/scripts.js" defer></script>
+    <script src="js/copy_to_clipboard.js" defer></script>
+    <script src="js/nodes.js" defer></script>
+
+</head>
+
+<body class="main-bg">
+
+    <div class="node node-main board">
+
+        <!-- SVG DAS CONEXÕES -->
+        <svg class="connections"></svg>
+
+        <div class="node-title shader node-main-title">
+            <span class="title-text">Animations</span>
+
+            <button class="menu-toggle" aria-label="Open menu">
+                ☰
+            </button>
+
+            <nav class="node-menu">
+                <a href='index.html' class="node-button"><span class="icon"><img
+                            src="icons/downarrow_hlt.svg" alt="icon"></span>Home</a>
+                <a href="portfolio.html" class="node-button current-page"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Animations</a>
+                <a href="index.html#rigs" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Rigs</a>
+                <a href="index.html#socials" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Socials</a>
+                <a href="portfolio.html#contact" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
+                            alt="icon"></span>Contact</a>
+            </nav>
+        </div>
+
+        <div class="node-body node-grid" id="zindex-fix">
+
+            <div class="node" id="zindex-fix">
+
+                <div class="node-title image">Latest Showreel</div>
+
+                <div class="node-body">
+
+                    <!-- SOCKET OUTPUT -->
+                    <div class="socket output color">
+                        Color
+                    </div>
+                    <!-- SOCKET OUTPUT -->
+                    <div class="socket output float">
+                        Alpha
+                    </div>
+                    <div class="node-content" id="vid-showreel">
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/b7acPi-Y58A?si=y682XnDwxkvKJc9Y"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input vector">
+                        Vector
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- NOVA LINHA -->
+        <div class="node-body node-grid">
+
+            <!-- ULTIMOS VIDEOS -->
+            <div class="node" id="portfolio">
+
+                <div class="node-title color">More Animations</div>
+
+                <div class="node-body">
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output color">
+                        Color
+                    </div>
+                    <div class="node-content-grid node-content">
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/gTEAdShoys0?si=lKHQI9OxJs6wCBLS"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/ETN6UtoH6dQ?si=nrJmVJ41rolw5m3T"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/Rwz6J_4sorQ?si=gOKGgE4UKODzNld7"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/f7oR2U5oT8I?si=KdX4RDmUdbSAxMtd"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/SeFOuWl7bZY?si=YB9cvq4JdNXNwqBG"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="960" height="540"
+                            src="https://www.youtube.com/embed/fJLqUacQxRQ?si=N5i5vLY27RY53KbK"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <div style="height: 2em;"></div>
+                    <!-- BOTAO VER MAIS -->
+                    <a href="https://www.youtube.com/@goribby/videos" target="_blank" class="node-button">
+
+                        Watch all on YouTube
+                        <span class="icon">
+                            <img src="icons/external-link.svg" alt="icon">
+                        </span>
+                    </a>
+
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input float">
+                        Factor
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NOVA LINHA -->
+
+        <div class="node-body node-grid">
+
+            <div class="node node-parent" id="contact">
+
+                <div class="node-title math">Contact</div>
+
+                <div class="node-body">
+
+                    <!-- SOCKET OUTPUT-->
+                    <div class="socket output float">
+                        Value
+                    </div>
+
+                    <div class="node-children">
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #5865f2;">Discord</div>
+                            <div class="node-body" style="text-align: center;">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output discord" id="out-discord" data-connect="in-email"></div>
+                                <p>@goribby</p>
+                                <div class="node-content" style="padding: 40px;">
+                                    <img src="img/Discord-Symbol-Blurple.svg">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <button class="node-button" onclick="copyDiscord(this)">
+                                    Copy Username
+                                    <span class="icon">
+                                        <img src="icons/copy.svg" alt="icon">
+                                    </span>
+                                </button>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input discord"></div>
+                            </div>
+                        </div>
+
+                        <div class="node node-child">
+                            <div class="node-title" style="background-color: #ea4335;">Email</div>
+                            <div class="node-body" style="text-align: center; font-size: smaller;">
+                                <!-- SOCKET OUTPUT-->
+                                <div class="socket output email"></div>
+                                <p>contact.goribby@gmail.com</p>
+                                <div class="node-content" style="padding: 30px;">
+                                    <img src="img/Gmail_Icon.original.png">
+                                </div>
+                                <div style="height: .5em;"></div>
+                                <a href="mailto:contact.goribby@gmail.com" target="_blank" class="node-button">
+                                    Email
+                                    <span class="icon">
+                                        <img src="icons/external-link.svg" alt="icon">
+                                    </span>
+                                </a>
+                                <!-- SOCKET INPUT-->
+                                <div class="socket input email" id="in-email"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOCKET INPUT-->
+                    <div class="socket input float">
+                        Factor
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
 
 </html>
