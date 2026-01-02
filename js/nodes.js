@@ -154,5 +154,5 @@ function scheduleDraw() {
 // EVENTOS
 // ==========================
 
-window.addEventListener('load', drawConnections);
+window.addEventListener('DOMContentLoaded', drawConnections);
 window.addEventListener('resize', scheduleDraw);
