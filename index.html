@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" lang="en">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goribby's Website - Home</title>
+    <meta
+        name="description"
+        content="The official website for Goribby, a Brazilian 3D animator. This website includes animations,
+                rigs, socials, and contact information.">
 
     <!-- Open Graph -->
     <meta content="Goribby's Website" property="og:title" />
@@ -26,7 +30,7 @@
 
 <body class="main-bg">
 
-    <div class="node node-main board">
+    <div class="node node-main board" role="main">
 
         <!-- SVG DAS CONEXÕES -->
         <svg class="connections"></svg>
@@ -38,7 +42,7 @@
                 ☰
             </button>
 
-            <nav class="node-menu">
+            <nav class="node-menu" role="navigation">
                 <a href='' class="node-button current-page"><span class="icon"><img
                             src="icons/downarrow_hlt.svg" alt="icon"></span>Home</a>
                 <a href="/portfolio" class="node-button"><span class="icon"><img src="icons/downarrow_hlt.svg"
@@ -70,7 +74,7 @@
                     </div>
                     <div class="node-content">
                         <img fetchpriority="high" src="img/avatar.webp"
-                        style="width: 100%; height: auto; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));">
+                        style="width: 100%; height: auto; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));" alt="Avatar">
                     </div>
                     <!-- SOCKET INPUT-->
                     <div class="socket input vector">
@@ -148,7 +152,7 @@
 
                         View more
                         <span class="icon">
-                            <img src="icons/external-link.svg" alt="icon">
+                            <img src="icons/external-link.svg" alt="External Link Icon">
                         </span>
                     </a>
 
@@ -184,14 +188,14 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output color" id="out-cs2" data-connect="in-l4d2"></div>
                                 <div class="node-content" style="padding: 10px;">
-                                    <img src="img/rigs/cs2.webp">
+                                    <img src="img/rigs/cs2.webp" alt="Icon for the CS2 Rig">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://goribby.gumroad.com/l/cs2-multirig" target="_blank"
                                     class="node-button">
                                     Download
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
 
@@ -206,13 +210,13 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output color" id="out-l4d2" data-connect="in-indy"></div>
                                 <div class="node-content" style="padding: 10px;">
-                                    <img src="img/rigs/l4d2.webp">
+                                    <img src="img/rigs/l4d2.webp" alt="Icon for the Left 4 Dead 2 Rig">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://goribby.gumroad.com/l/l4d2-rig" target="_blank" class="node-button">
                                     Download
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
                                 <!-- SOCKET INPUT-->
@@ -227,13 +231,13 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output color"></div>
                                 <div class="node-content" style="padding: 10px;">
-                                    <img src="img/rigs/indy.webp">
+                                    <img src="img/rigs/indy.webp" alt="Icon for the Indiana Jones Rig">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://goribby.gumroad.com/l/indy-rig" target="_blank" class="node-button">
                                     Download
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
                                 <!-- SOCKET INPUT-->
@@ -247,7 +251,7 @@
 
                         View more
                         <span class="icon">
-                            <img src="icons/external-link.svg" alt="icon">
+                            <img src="icons/external-link.svg" alt="External Link Icon">
                         </span>
                     </a>
 
@@ -287,13 +291,13 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output bsky" id="out-bsky" data-connect="in-yt"></div>
                                 <div class="node-content" style="padding: 35px;">
-                                    <img src="img/Bluesky_Logo.svg">
+                                    <img src="img/Bluesky_Logo.svg" alt="Bluesky Logo">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://bsky.app/profile/goribby.com" target="_blank" class="node-button">
                                     Follow
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
 
@@ -308,13 +312,13 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output yt" id="out-yt" data-connect="in-artst"></div>
                                 <div class="node-content" style="padding: 10px;">
-                                    <img src="img/yt_icon_red_digital.png">
+                                    <img src="img/yt_icon_red_digital.png" alt="YouTube Logo">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://www.youtube.com/@goribby" target="_blank" class="node-button">
                                     Subscribe
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
                                 <!-- SOCKET INPUT-->
@@ -330,13 +334,13 @@
                                 <!-- SOCKET OUTPUT-->
                                 <div class="socket output artst"></div>
                                 <div class="node-content" style="padding: 10px;">
-                                    <img src="img/ArtStation-logomark-white.svg">
+                                    <img src="img/ArtStation-logomark-white.svg" alt="ArtStation Logo">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="https://www.artstation.com/goribby" target="_blank" class="node-button">
                                     View Profile
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
                                 <!-- SOCKET INPUT-->
@@ -380,13 +384,13 @@
                                 <div class="socket output discord" id="out-discord" data-connect="in-email"></div>
                                 <p>@goribby</p>
                                 <div class="node-content" style="padding: 40px;">
-                                    <img src="img/Discord-Symbol-Blurple.svg">
+                                    <img src="img/Discord-Symbol-Blurple.svg" alt="Discord Logo">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <button class="node-button" onclick="copyDiscord(this)">
                                     Copy Username
                                     <span class="icon">
-                                        <img src="icons/copy.svg" alt="icon">
+                                        <img src="icons/copy.svg" alt="External Link Icon">
                                     </span>
                                 </button>
                                 <!-- SOCKET INPUT-->
@@ -401,13 +405,13 @@
                                 <div class="socket output email"></div>
                                 <p>contact.goribby@gmail.com</p>
                                 <div class="node-content" style="padding: 30px;">
-                                    <img src="img/Gmail_Icon.original.png">
+                                    <img src="img/Gmail_Icon.original.png" alt="Gmail Logo">
                                 </div>
                                 <div style="height: .5em;"></div>
                                 <a href="mailto:contact.goribby@gmail.com" target="_blank" class="node-button">
                                     Email
                                     <span class="icon">
-                                        <img src="icons/external-link.svg" alt="icon">
+                                        <img src="icons/external-link.svg" alt="External Link Icon">
                                     </span>
                                 </a>
                                 <!-- SOCKET INPUT-->
