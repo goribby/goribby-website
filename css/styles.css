@@ -98,13 +98,7 @@ html, body {
 .node-content-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-}
-
-@media (max-width: 600px) {
-    .node-content-grid {
-        grid-template-columns: 1fr; /* 1 coluna por vez */
-    }
+    gap: 4px;
 }
 
 .node-content-grid iframe {
